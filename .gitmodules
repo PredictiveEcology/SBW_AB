@@ -1,3 +1,6 @@
+[submodule "TriSect_dataPrep"]
+	path = modules/TriSect_dataPrep
+	url = https://github.com/PredictiveEcology/TriSect_dataPrep
 [submodule "modules/Biomass_borealDataPrep"]
 	path = modules/Biomass_borealDataPrep
 	url = https://github.com/PredictiveEcology/Biomass_borealDataPrep
@@ -37,6 +40,12 @@
 [submodule "modules/gmcsDataPrep"]
 	path = modules/gmcsDataPrep
 	url = https://github.com/ianmseddy/gmcsDataPrep
-[submodule "TriSect_dataPrep"]
-	path = modules/TriSect_dataPrep
-	url = https://github.com/PredictiveEcology/TriSect_dataPrep
+[submodule "modules/Biomass_regeneration"]
+	path = modules/Biomass_regeneration
+	url = https://github.com/PredictiveEcology/Biomass_regeneration
+[submodule "modules/WBI_dataPrep_studyArea.git"]
+	path = modules/WBI_dataPrep_studyArea.git
+	url = https://github.com/PredictiveEcology/WBI_dataPrep_studyArea.git
+[submodule "modules/Biomass_speciesFactorial"]
+	path = modules/Biomass_speciesFactorial
+	url = https://github.com/PredictiveEcology/Biomass_speciesFactorial
