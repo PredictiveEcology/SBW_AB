@@ -38,5 +38,5 @@
 	path = modules/gmcsDataPrep
 	url = https://github.com/ianmseddy/gmcsDataPrep
 [submodule "TriSect_dataPrep"]
-	path = TriSect_dataPrep
+	path = modules/TriSect_dataPrep
 	url = https://github.com/PredictiveEcology/TriSect_dataPrep
