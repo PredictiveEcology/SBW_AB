@@ -1,21 +1,18 @@
-[submodule "modules/TriSect_dataPrep"]
-path = modules/TriSect_dataPrep
-url = https://github.com/PredictiveEcology/TriSect_dataPrep
 [submodule "modules/Biomass_borealDataPrep"]
-path = modules/Biomass_borealDataPrep
-url = https://github.com/PredictiveEcology/Biomass_borealDataPrep
+  path = modules/Biomass_borealDataPrep
+  url = https://github.com/PredictiveEcology/Biomass_borealDataPrep
 [submodule "modules/Biomass_core"]
-path = modules/Biomass_core
-url = https://github.com/PredictiveEcology/Biomass_core
+  path = modules/Biomass_core
+  url = https://github.com/PredictiveEcology/Biomass_core
 [submodule "modules/Biomass_speciesData"]
-path = modules/Biomass_speciesData
-url = https://github.com/PredictiveEcology/Biomass_speciesData
+  path = modules/Biomass_speciesData
+  url = https://github.com/PredictiveEcology/Biomass_speciesData
 [submodule "modules/TriSect_Disperse"]
-path = modules/TriSect_Disperse
-url = https://github.com/achubaty/TriSect_Disperse
+  path = modules/TriSect_Disperse
+  url = https://github.com/achubaty/TriSect_Disperse
 [submodule "modules/TriSect_Impact"]
-path = modules/TriSect_Impact
-url = https://github.com/achubaty/TriSect_Impact
+  path = modules/TriSect_Impact
+  url = https://github.com/achubaty/TriSect_Impact
 [submodule "modules/TriSect_RecruitAndDefoliate"]
 path = modules/TriSect_RecruitAndDefoliate
 url = https://github.com/achubaty/TriSect_RecruitAndDefoliate
@@ -40,3 +37,6 @@ url = https://github.com/PredictiveEcology/Biomass_speciesFactorial
 [submodule "modules/gmcsDataPrep"]
 path = modules/gmcsDataPrep
 url = https://github.com/ianmseddy/gmcsDataPrep
+[submodule "TriSect_dataPrep"]
+	path = TriSect_dataPrep
+	url = https://github.com/PredictiveEcology/TriSect_dataPrep
