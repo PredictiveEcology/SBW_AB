@@ -19,7 +19,7 @@ out <- SpaDES.project::setupProject(
     "PredictiveEcology/Biomass_speciesData@terra-migration",
     "PredictiveEcology/Biomass_speciesFactorial",
     "PredictiveEcology/Biomass_speciesParameters@Eliot",
-    "PredictiveEcology/TriSect_dataPrep",
+    "PredictiveEcology/TriSect_dataPrep@Eliot",
     "PredictiveEcology/WBI_dataPrep_studyArea@Eliot"
   ),
   sideEffects = {
