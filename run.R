@@ -43,7 +43,8 @@ out <- SpaDES.project::setupProject(
                     vegLeadingProportion = 0,
                     .useCache = c(".inputObjects", "init"),
                     studyAreaName = prov,
-                    .studyAreaName = prov)
+                    .studyAreaName = prov,
+                    .plots = FALSE)
                 ),
   # These were determined on an ad hoc basis... run, wait for error, add package
   packages = c(
