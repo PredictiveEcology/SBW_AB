@@ -1,9 +1,10 @@
 
 # make sure a recent version of SpaDES.project is installed
-if (tryCatch(packageVersion("SpaDES.project") < "0.0.7.9019", error = function(e) TRUE)) {
-  install.packages("SpaDES.project",
-                   repos = c("https://predictiveecology.r-universe.dev",
-                             getOption("repos")))
+if (tryCatch(packageVersion("SpaDES.project") < "0.0.7.9020", error = function(e) TRUE)) {
+  system.time(Require::Install("PredictiveEcology/SpaDES.project@transition (HEAD)"))
+  #install.packages("SpaDES.project",
+  #                 repos = c("https://predictiveecology.r-universe.dev",
+  #                           getOption("repos")))
 }
 out <- SpaDES.project::setupProject(
   modules = c(
@@ -13,17 +14,18 @@ out <- SpaDES.project::setupProject(
     "achubaty/TriSect_ReproMods@Eliot",
     "achubaty/TriSect_SpringInsect@Eliot",
     "achubaty/TriSect_SpringPredator@Eliot",
-    "PredictiveEcology/Biomass_borealDataPrep@development",
-    "PredictiveEcology/Biomass_core@development",
-    "PredictiveEcology/Biomass_speciesData@development",
+    "PredictiveEcology/Biomass_borealDataPrep@Eliot",
+    "PredictiveEcology/Biomass_core@Eliot",
+    "PredictiveEcology/Biomass_speciesData@terra-migration",
     "PredictiveEcology/Biomass_speciesFactorial",
-    "PredictiveEcology/Biomass_speciesParameters@development",
+    "PredictiveEcology/Biomass_speciesParameters@Eliot",
     "PredictiveEcology/TriSect_dataPrep",
     "PredictiveEcology/WBI_dataPrep_studyArea@Eliot"
   ),
   sideEffects = {
     if (user("emcintir"))
       googledrive::drive_auth(email = "eliotmcintire@gmail.com", cache = "~/.secret")
+    httr::set_config(httr::config(http_version = 0))
   },
   options = list(spades.allowInitDuringSimInit = TRUE,
                  spades.moduleCodeChecks = FALSE,
@@ -31,7 +33,9 @@ out <- SpaDES.project::setupProject(
                  reproducible.useTerra = TRUE,
                  reproducible.rasterRead = "terra::rast",
                  reproducible.useMemoise = TRUE,
-                 reproducible.showSimilarDepth = 5),
+                 reproducible.showSimilarDepth = 5,
+                 repos = c("https://predictiveecology.r-universe.dev",
+                           getOption("repos"))),
   prov = "AB",
   useGit = TRUE,
   params = list(.globals =
@@ -39,15 +43,11 @@ out <- SpaDES.project::setupProject(
                     vegLeadingProportion = 0,
                     .useCache = c(".inputObjects", "init"),
                     studyAreaName = prov,
-                    .studyAreaName = prov),
-                WBI_dataPrep_studyArea =
-                  list(
-                    studyAreaName = prov
-                  )),
-  #Biomass_speciesParameters = list(PSPdataTypes = prov)),
-
+                    .studyAreaName = prov)
+                ),
   # These were determined on an ad hoc basis... run, wait for error, add package
   packages = c(
+    "NLMR",
     "PredictiveEcology/LandR@terra-migration (HEAD)",
     "data.table",
     "PredictiveEcology/reproducible@errorPostProcess (HEAD)",
