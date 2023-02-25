@@ -14,7 +14,7 @@ out <- SpaDES.project::setupProject(
     "achubaty/TriSect_ReproMods@Eliot",
     "achubaty/TriSect_SpringInsect@Eliot",
     "achubaty/TriSect_SpringPredator@Eliot",
-    "PredictiveEcology/Biomass_borealDataPrep@Eliot",
+    "PredictiveEcology/Biomass_borealDataPrep@terra-migration",
     "PredictiveEcology/Biomass_core@Eliot",
     "PredictiveEcology/Biomass_speciesData@terra-migration",
     "PredictiveEcology/Biomass_speciesFactorial",
