@@ -35,7 +35,8 @@ out <- SpaDES.project::setupProject(
                  reproducible.useMemoise = TRUE,
                  reproducible.showSimilarDepth = 5,
                  repos = c("https://predictiveecology.r-universe.dev",
-                           getOption("repos"))),
+                           getOption("repos")),
+                 spades.debug = list(1, "newObjects")),
   prov = "AB",
   useGit = TRUE,
   params = list(.globals =
@@ -48,7 +49,7 @@ out <- SpaDES.project::setupProject(
                 ),
   # These were determined on an ad hoc basis... run, wait for error, add package
   packages = c(
-    "NLMR",
+    "NLMR", "microbenchmark",
     "PredictiveEcology/LandR@terra-migration (HEAD)",
     "data.table",
     "PredictiveEcology/reproducible@errorPostProcess (HEAD)",
@@ -62,4 +63,5 @@ out <- SpaDES.project::setupProject(
 out$objects$objectSynonyms <- list(c("PSPmeasure_sppParams", "PSPmeasure"),
                                    c("PSPgis_sppParams", "PSPgis"),
                                    c("PSPplot_sppParams", "PSPplot"))
+pkgload::load_all("~/GitHub/SpaDES.core")
 out2 <- do.call(SpaDES.core::simInitAndSpades, out)
