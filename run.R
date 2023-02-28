@@ -37,7 +37,7 @@ out <- SpaDES.project::setupProject(
                  reproducible.useMemoise = TRUE,
                  reproducible.showSimilarDepth = 5,
                  repos = c("https://predictiveecology.r-universe.dev",
-                           getOption("repos")),
+                           getOption("repos"))),
   prov = "AB",
   useGit = FALSE,
   params = list(.globals =
@@ -49,8 +49,7 @@ out <- SpaDES.project::setupProject(
                     .plots = FALSE),
                 TriSect_Disperse = list(
                   MaxDistThreshold = 1e3 # in m
-                )
-                ),
+                )),
   # These were determined on an ad hoc basis... run, wait for error, add package
   packages = c(
     "NLMR", "microbenchmark",
