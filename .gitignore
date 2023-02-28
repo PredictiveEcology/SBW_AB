@@ -27,3 +27,4 @@ vignettes/*.pdf
 *.knit.md
 4.2/*
 modules/*
+m/*

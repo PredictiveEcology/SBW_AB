@@ -6,6 +6,8 @@ if (tryCatch(packageVersion("SpaDES.project") < "0.0.7.9020", error = function(e
   #                 repos = c("https://predictiveecology.r-universe.dev",
   #                           getOption("repos")))
 }
+# pkgload::load_all("~/GitHub/SpaDES.project")
+
 out <- SpaDES.project::setupProject(
   modules = c(
     "achubaty/TriSect_Disperse@development",
@@ -36,16 +38,18 @@ out <- SpaDES.project::setupProject(
                  reproducible.showSimilarDepth = 5,
                  repos = c("https://predictiveecology.r-universe.dev",
                            getOption("repos")),
-                 spades.debug = list(1, "newObjects")),
   prov = "AB",
-  useGit = TRUE,
+  useGit = FALSE,
   params = list(.globals =
                   list(
                     vegLeadingProportion = 0,
                     .useCache = c(".inputObjects", "init"),
                     studyAreaName = prov,
                     .studyAreaName = prov,
-                    .plots = FALSE)
+                    .plots = FALSE),
+                TriSect_Disperse = list(
+                  MaxDistThreshold = 1e3 # in m
+                )
                 ),
   # These were determined on an ad hoc basis... run, wait for error, add package
   packages = c(
@@ -63,5 +67,5 @@ out <- SpaDES.project::setupProject(
 out$objects$objectSynonyms <- list(c("PSPmeasure_sppParams", "PSPmeasure"),
                                    c("PSPgis_sppParams", "PSPgis"),
                                    c("PSPplot_sppParams", "PSPplot"))
-pkgload::load_all("~/GitHub/SpaDES.core")
+# pkgload::load_all("~/GitHub/SpaDES.core")
 out2 <- do.call(SpaDES.core::simInitAndSpades, out)
